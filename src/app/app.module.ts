@@ -26,7 +26,7 @@ import { TranslationLoaderService } from './services/translation-loader.service'
         // Custom Loader
         useClass: TranslationLoaderService,
 
-        // Dependencies which helps serving loader
+        // Dependencies will be injected into translation-loader service ctor
         deps: [HttpClient]
       }
     })

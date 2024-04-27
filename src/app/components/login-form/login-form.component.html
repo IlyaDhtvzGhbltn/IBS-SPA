@@ -1,11 +1,13 @@
 <div class="login-container">
   <div class="login-form">
     <h2>Login</h2>
-    <form>
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-    </form>
+    <div>
+      <input type="text" placeholder="Username" #username>
+      <input type="password" placeholder="Password" #password>
+      <button type="submit" (click)="onSubmit(username.value, password.value)">Login</button>
+    </div>
+
+
     <p>{{ 'LoginForm.Text' | translate }} </p>
   </div>
 </div>
