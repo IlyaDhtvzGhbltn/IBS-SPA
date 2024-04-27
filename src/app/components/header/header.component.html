@@ -4,7 +4,7 @@
       <h1>IBS SPA</h1>
     </div>
     <div class="language-selector">
-      <select id="language-select">
+      <select id="language-select" (change)="changeLanguage($event)">
         <option value="en">English</option>
         <option value="de">Deutsch</option>
       </select>
