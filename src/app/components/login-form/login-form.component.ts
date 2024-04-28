@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { AuthService } from '../../services/auth.service';
 import { AlertComponent } from '../alert/alert.component';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,6 +26,8 @@ export class LoginFormComponent {
       .subscribe(
         (response) => {
           if (response.success == false) {
+
+            //Handling invalid responce
             this.alert.show();
           }
           else {
