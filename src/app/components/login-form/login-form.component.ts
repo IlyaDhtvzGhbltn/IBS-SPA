@@ -15,6 +15,9 @@ export class LoginFormComponent {
   constructor(
     private authService: AuthService,
     private router: Router) {
+    if (authService.canActivate()) {
+      this.router.navigate(['/data']);
+    }
   }
 
   onSubmit(username: string, password: string): void {
@@ -25,6 +28,7 @@ export class LoginFormComponent {
             this.alert.show();
           }
           else {
+            this.authService.setAuthorization(response.access_token);
             this.router.navigate(['/data']);
           }
         },

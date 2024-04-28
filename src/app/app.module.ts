@@ -4,12 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { AppComponent } from './app.component';
 
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslationLoaderService } from './services/translation-loader.service';
 import { AlertComponent } from './components/alert/alert.component';
 import { DataComponent } from './components/data/data.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthInterceptor } from './services/auth.interceptor.service';
 
 
 
@@ -37,7 +38,7 @@ import { AppRoutingModule } from './app-routing.module';
       }
     })
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
