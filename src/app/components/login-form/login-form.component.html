@@ -6,8 +6,8 @@
       <input type="password" placeholder="Password" #password>
       <button type="submit" (click)="onSubmit(username.value, password.value)">Login</button>
     </div>
-
-
     <p>{{ 'LoginForm.Text' | translate }} </p>
   </div>
 </div>
+<app-alert #alert></app-alert>
+

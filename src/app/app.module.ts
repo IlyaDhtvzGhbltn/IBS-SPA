@@ -7,16 +7,22 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslationLoaderService } from './services/translation-loader.service';
+import { AlertComponent } from './components/alert/alert.component';
+import { DataComponent } from './components/data/data.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    AlertComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
       loader: {
