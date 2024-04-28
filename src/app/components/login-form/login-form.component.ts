@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
 
 import { AuthService } from '../../services/auth.service';
 import { AlertComponent } from '../alert/alert.component';
@@ -22,22 +22,33 @@ export class LoginFormComponent {
   }
 
   onSubmit(username: string, password: string): void {
-    this.authService.login(username, password)
-      .subscribe(
-        (response) => {
-          if (response.success == false) {
+    // Client side validation of user creds
+    if (username && password) {
 
-            //Handling invalid responce
+      // Use Auth service to try to login
+      this.authService.login(username, password)
+        .subscribe(
+          (response) => {
+            if (response.success == false) {
+
+              //Handling invalid responce
+              this.alert.show();
+            }
+            else {
+              this.authService.setAuthorization(response.access_token);
+              this.router.navigate(['/data']);
+            }
+          },
+          (error) => {
             this.alert.show();
           }
-          else {
-            this.authService.setAuthorization(response.access_token);
-            this.router.navigate(['/data']);
-          }
-        },
-        (error) => {
-          this.alert.show();
-        }
-      );
+        );
+    }
+  }
+
+  // Prevent form submiting
+  // Use onSubmit instead
+  onFormSubmit(event: Event): void {
+    event.preventDefault();
   }
 }

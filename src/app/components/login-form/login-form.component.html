@@ -1,11 +1,11 @@
 <div class="login-container">
   <div class="login-form">
     <h2>Login</h2>
-    <div>
-      <input type="text" placeholder="Username" #username>
-      <input type="password" placeholder="Password" #password>
+    <form (submit)="onFormSubmit($event)">
+      <input type="text" required placeholder="Username" #username>
+      <input type="password" required placeholder="Password" #password>
       <button type="submit" (click)="onSubmit(username.value, password.value)">Login</button>
-    </div>
+    </form>
     <p>{{ 'LoginForm.Text' | translate }} </p>
   </div>
 </div>
