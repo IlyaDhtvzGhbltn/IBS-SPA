@@ -16,7 +16,7 @@ Additional tests have been written for the **login-form.component** component.
 
 
 #### Successful authorization
-For successful authorization, use the following username and any password: **Ilia_R**
+For successful authorization, use the following username and any password: **Ilia_R**.
 If the entered data is successfully validated, the user will be redirected to the product page.
 Also, the token will be saved in local storage and will be sent in the header with each subsequent request.
 After successful validation, the user cannot open the form with login and password.
@@ -50,7 +50,7 @@ Für die Komponente **login-form.component** wurden zusätzliche Tests geschrieb
 
 
 #### Erfolgreiche Autorisierung
-Verwenden Sie für eine erfolgreiche Autorisierung den folgenden Benutzernamen und ein beliebiges Passwort: ** Ilia_R**
+Verwenden Sie für eine erfolgreiche Autorisierung den folgenden Benutzernamen und ein beliebiges Passwort: **Ilia_R**.
 Bei erfolgreicher Validierung der eingegebenen Daten wird der Nutzer auf die Produktseite weitergeleitet.
 Außerdem wird das Token im lokalen Speicher gespeichert und bei jeder weiteren Anfrage im Header gesendet.
 Darüber hinaus wird das Token im lokalen Speicher gespeichert und bei jeder weiteren Anfrage im Header gesendet.
