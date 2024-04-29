@@ -29,7 +29,7 @@ export class LoginFormComponent {
       this.authService.login(username, password)
         .subscribe(
           (response) => {
-            if (response.success == false) {
+            if (response.success === false) {
 
               //Handling invalid responce
               this.alert.show();

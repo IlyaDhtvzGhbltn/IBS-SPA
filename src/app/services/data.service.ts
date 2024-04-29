@@ -11,10 +11,11 @@ export class DataService {
   private dataApiUrl: string;
 
   constructor(private http: HttpClient) {
-    // Getting data api url from environment
+    // Getting data-api url from environment
     this.dataApiUrl = environment.dataApiUrl;
   }
 
+  // Getting private products
   getProducts(): Observable<any> {
     const url = `${this.dataApiUrl}/products`;
     var responce = this.http.get(url);

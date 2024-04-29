@@ -12,7 +12,7 @@ export class AuthService {
   private authApiUrl: string;
 
   constructor(private http: HttpClient, private router: Router) {
-    // Getting auth api url from environment
+    // Getting auth-api url from environment
     this.authApiUrl = environment.authApiUrl;
   }
 
@@ -28,12 +28,14 @@ export class AuthService {
     }
   }
 
+  // Login
   login(username: string, password: string): Observable<any> {
     const url = `${this.authApiUrl}/login`;
     var responce = this.http.post(url, { username, password });
     return responce;
   }
 
+  // Save auth token in localStorage
   setAuthorization(token: string): void {
     localStorage.setItem('access_token', token);
   }
